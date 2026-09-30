@@ -1,0 +1,13 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_urls %}
+
+{% block result_list %}
+{% if cl.formset and cl.result_count %}
+{# Дублируем блок сохранения наверх таблицы #}
+<div class="submit-row" style="margin-bottom: 15px; border-radius: 8px;">
+    <input type="submit" name="_save" class="default" value="{% translate 'Save' %}" style="padding: 8px 16px; font-weight: bold;">
+</div>
+{% endif %}
+
+{{ block.super }}
+{% endblock %}
